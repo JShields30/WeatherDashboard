@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css"/>
+    <title>NYT-Phase</title>
+  </head>
+
+<body>
+    <header class="jumbotron">
+      <h1 class="display-3"><i class="fas fa-newspaper"></i> Weather Dashboards</h1>
+    </header>
+    <div id="container">
+        <h2><i class="fas fa-newspaper"></i> Search Parameters</h2>
+        <form id="form">
+            <div class="form-group">
+                <label>Search Item</label>
+                <input type="text" class="form-control" id="searchItem">
+            </div>
+            <div class="form-group">
+                <label>Number of Records to Retrieve</label>
+                    <br />
+                <input type="range" class="form-control" min="1" max="20" name="slider" id="slider">
+                    <br />
+                <div id="length"></div>
+            </div>
+            <div class="form-group">
+                <label>Start Year (Optional)</label>
+                <input type="text" class="form-control" id="startYear">
+            </div>
+            <div class="form-group">
+                <label>End Year (Optional)</label>
+                <input type="text" class="form-control" id="endYear">
+            </div>
+            <button id="searchBtn">Search</button>
+            <button id="clearResultsBtn">Clear Results</button>
+        </form>
+        </div>
+        <div id="container2">
+            <form id="form">
+                <div class="form-group">
+                <div class="table">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2><i class="fas fa-newspaper"></i> Top Articles</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" id="topArticleDiv">
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+          $("#searchBtn").on("click", function(event){
+            event.preventDefault();
+            var searchTitle = $("#searchItem").val();
+            var APIKey = "80i64TLVwD3gwV29UBglfrg5w8f49AyS";
+            var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?" +
+            "q=" + searchTitle + "&api-key=" + APIKey;
+            $.ajax({
+            url: queryURL,
+            method: "GET"
+          })
+            .then(function(data) {
+              console.log(queryURL);
+              console.log(data);
+              console.log(searchTitle);
+              var results = data.response.docs;
+              for (var i = 0 ; i < results.length; i++ ) {
+                var topArticle = $("<p>").text(JSON.stringify(results[i]));
+                $("#topArticleDiv").append(topArticle);
+                topArticle = $("<div>");
+              }
+            });
+          });
+        </script>
+    <script src="script.js"></script>
+</body>
+    <footer>
+        <div><i class="fas fa-smile-beam"></i></div>
+    </footer>
+</html>
+</html>
