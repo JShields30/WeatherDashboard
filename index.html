@@ -19,37 +19,21 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css"/>
-    <title>NYT-Phase</title>
+    <title>Weather Dashboard</title>
   </head>
 
 <body>
     <header class="jumbotron">
-      <h1 class="display-3"><i class="fas fa-newspaper"></i> Weather Dashboards</h1>
+      <h1 class="display-3"><i class="fas fa-sun"></i> Weather Dashboards</h1>
     </header>
     <div id="container">
-        <h2><i class="fas fa-newspaper"></i> Search Parameters</h2>
+        <h2><i class="fas fa-city"></i> Search for a city</h2>
         <form id="form">
             <div class="form-group">
-                <label>Search Item</label>
+                <label>Search City</label>
                 <input type="text" class="form-control" id="searchItem">
             </div>
-            <div class="form-group">
-                <label>Number of Records to Retrieve</label>
-                    <br />
-                <input type="range" class="form-control" min="1" max="20" name="slider" id="slider">
-                    <br />
-                <div id="length"></div>
-            </div>
-            <div class="form-group">
-                <label>Start Year (Optional)</label>
-                <input type="text" class="form-control" id="startYear">
-            </div>
-            <div class="form-group">
-                <label>End Year (Optional)</label>
-                <input type="text" class="form-control" id="endYear">
-            </div>
             <button id="searchBtn">Search</button>
-            <button id="clearResultsBtn">Clear Results</button>
         </form>
         </div>
         <div id="container2">
@@ -58,7 +42,7 @@
                 <div class="table">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2><i class="fas fa-newspaper"></i> Top Articles</h2>
+                            <h2><i class="fas fa-wind"></i> 5-Day Forcast:</h2>
                         </div>
                     </div>
                     <div class="row">
