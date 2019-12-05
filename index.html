@@ -24,101 +24,37 @@
 
 <body>
          <header class="jumbotron">
-      <h1 class="display-3"><i class="fas fa-sun"></i> Weather Dashboard</h1>
-    </header>
-    <div id="container1">
-        <h2><i class="fas fa-city"></i> Search for a city</h2>
-        <form id="form">
-            <div class="form-group">
-                <input type="text" class="form-control" id="searchItem">
-            </div>
-            <button id="searchBtn">Search</button>
-        </form>
-        </div>
-        <div id="container2">
-            <form id="form">
-                <div class="form-group">
-                <div class="form">
-                            <h2><i class="fas fa-wind"></i> Current City</h2>
-  <div class="city"></div>
-  <div class="date"></div>
-  <div class="icon-image"></div>
-  <div class="temp"></div>
-  <div class="humidity"></div>
-  <div class="wind"></div>
-  <div class="uv-index"></div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript">
-    // This is our API key
-    var APIKey = "48bc438037e2bdcc406efdc80b46134e";
-
-    // Here we are building the URL we need to query the database
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
-      "q=Deerfield,US&units=imperial&appid=" + APIKey;
-
-    // Here we run our AJAX call to the OpenWeatherMap API
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    })
-      // We store all of the retrieved data inside of an object called "response"
-      .then(function(response) {
-
-        // Log the queryURL
-        console.log(queryURL);
-
-        // Log the resulting object
-        console.log(response);
-
-        // Transfer content to HTML
-        $(".city").html("<h1>" + response.name + "</h1>");
-        $(".date").text("Date" + response.main.date);
-        $(".icon-image").text("Icon Image" + response.icon.image);
-        $(".temp").text("Temperature (F) " + response.main.temp);
-        $(".humidity").text("Humidity: " + response.main.humidity);
-        $(".wind").text("Wind Speed: " + response.wind.speed);
-        $(".uv-index").text("UV Index: " + response.uv.index);
-
-        // Converts the temp to Kelvin with the below formula
-        var tempF = (response.main.temp - 273.15) * 1.80 + 32;
-        $(".tempF").text("Temperature (Kelvin) " + tempF);
-
-        // Log the data in the console as well
-        console.log("Wind Speed: " + response.wind.speed);
-        console.log(response);
-        console.log("Humidity: " + response.main.humidity);
-        console.log("Temperature (F): " + response.main.temp);
-        console.log("Icon Image" + response.icon.image);
-        console.log("Wind Speed: " + response.wind.speed);
-        console.log("UV Index: " + response.uv.index);
-      });
-  </script>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           <nav>
+              <h1 class="display-3"><i class="fas fa-sun"></i> Weather Dashboard</h1>
+          </nav>
+        </header>
+<div class="row">
+            <div class="col-sm-4 searchArea">
+                <h3>Search for a City:</h3>
+                <span id="error"></span>
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" id="city" placeholder="Search"
+                        aria-label="Search">
+                    <button type="button" id="submitCity" class="btn btn-primary" type="submit">Search</button>
                 </form>
-        <div id="container3">
-            <form id="form">
-                <div class="form-group">
-                <div class="table">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2><i class="fas fa-wind"></i> 5-Day Forecast:</h2>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12" id="topArticleDiv">
-                        </div>
-                    </div>
+                <br>
+                <div class="city-list"></div>
+            </div>
+            <div class="col currentCondition">
+                <div class="card">
+                    <div id="show" class="card-body"></div>
                 </div>
+                <br>
+                <div class="row" id="5-day-forecast">
+                    <h3>5-Day Forecast:</h3>
                 </div>
-            </form>
+            </div>
         </div>
-    </div>
     <footer>
         <div><i class="fas fa-smile-beam"></i></div>
     </footer>
-    </body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

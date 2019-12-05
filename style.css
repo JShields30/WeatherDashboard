@@ -6,33 +6,13 @@
     border-bottom: 5px solid black;
     font-family: Arial, Helvetica, sans-serif;
   }
+  
+.row {
+display: inline-block;
+text-align: center;
+}
 
-  #container1 {
-    border: solid black 1px;
-    margin: 2rem;
-    padding: 2rem;
-    display: inline-block,;
-    contain: content;
-    text-align: center;
-  }
-
-  #container2 {
-    border: solid black 1px;
-    margin: 2rem;
-    padding: 2rem;
-    display: inline-block,;
-    contain: content;
-  }
-
-  #container3 {
-    border: solid black 1px;
-    margin: 2rem;
-    padding: 2rem;
-    display: inline-block,;
-    contain: content;
-  }
-
-  footer {
+footer {
     position: fixed;
     left: 0;
     bottom: 0;
