@@ -43,3 +43,9 @@ footer {
     text-shadow: ivory;
     text-size-adjust: 15px;
   }
+  body {
+    background-image: url(./images/chicago.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+  }
