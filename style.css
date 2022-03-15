@@ -90,6 +90,7 @@ footer {
   align-content: center;
   margin-left: auto;
   margin-right: auto;
+  
 }
 
 .row {
@@ -108,4 +109,9 @@ footer {
 h3 {
   margin-left: auto;
   margin-right: auto;
+}
+
+h2 {
+  text-align: center;
+  
 }

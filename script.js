@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     // FUNCTIONS
     function show(data) {
-        return "<h2>" + data.name + moment().format(' (MM/DD/YYYY)') + "</h2>" +
+        return "<h3>" + data.name + moment().format(' (MM/DD/YYYY)') + "</h3>" +
             `
         <p><strong>Temperature</strong>: ${data.main.temp} °F</p>
         <p><strong>Humidity</strong>: ${data.main.humidity}%</p>
