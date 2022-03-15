@@ -19,19 +19,22 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
     <title>Weather Dashboard</title>
   </head>
 
 <body>
     <header class="navbar navbar-dark bg-dark shadow-sm">
-        <h1 class="navbar-brand d-flex align-items-center"><i class="fas fa-sun"></i>  Weather Dashboard</h1>
+        <h1 class="navbar-brand d-flex align-items-center text-align-center"><i class="fas fa-sun"></i> Weather Dashboard</h1>
     </header>
-          <div class="row">
+      <div class="row">
             <div class="col-sm-4 searchArea">
                 </i><h3><i class="fas fa-city"></i> Search for a City</h3>
                 <span id="error"></span>
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" id="city" placeholder="Search"
+                <form class="form">
+                    <input class="form-control mr-sm-2" type="search" id="city" placeholder="Enter City Name"
                         aria-label="Search">
                     <button type="button" id="submitCity" class="btn btn-primary" type="submit">Search</button>
                 </form>
@@ -49,10 +52,8 @@
             </div>
         </div>
     <footer>
-        <div><i class="fas fa-smile-beam"></i></div>
+        <div><i>Created by: Joe Shields</i></div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="script.js"></script>
+  
   </body>
 </html>
