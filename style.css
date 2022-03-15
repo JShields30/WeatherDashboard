@@ -1,3 +1,13 @@
+/* * {
+  overflow-y: auto;
+  overflow-x: hidden;
+} */
+/* 
+#root {
+  background-image: url('http://drive.google.com/uc?export=view&id=141MXp9upNzabMAueIslvMVqJ-SpuSRdk') !important;
+  background-size: cover;
+} */
+
 .jumbotron {
     text-align: center;
     background-color:  rgb(22, 5, 83);
@@ -7,29 +17,43 @@
     font-family: Arial, Helvetica, sans-serif;
   }
 
+
 .navbar{
     margin-bottom: 25px;
+    width: 100vw;
+    width: 100%;
 }
+
 ul{
   border-color: gray;
-  border-width: .5px;
+  border-width: 0.5px;
   border-style: solid;
   border-radius: 2px;
 }
 
 .searchArea{
-    margin-left: 30px;
+    margin-left: auto;
+    align-items: center;
+    text-align: center;
+    
 }
-
-#currentW{
-    background-color: white;
-    color: black;
+.form {
+  align-items: center;
+  text-align: center
+}
+.form-control {
+  align-items: center;
+  text-align: center;
+  border-radius: 1.25rem;
 }
 
 .card{
     border-radius: 10px;
     background-color: #007bff;
     color: white;
+    text-align: center;
+    margin-bottom: 0.2rem;
+   
 }
 
 footer {
@@ -43,9 +67,27 @@ footer {
     text-shadow: ivory;
     text-size-adjust: 15px;
   }
+  
   body {
-    background-image: url(./images/chicago.png);
-    background-size: cover;
+    background-image: url("http://drive.google.com/uc?export=view&id=1TeLDVworx-cxmCT8Mw-szOxXvOXe1CmB");
+    
+    background-size: cover; 
     background-repeat: no-repeat;
-   
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
+#currentW {
+  border-radius: 10px;
+  text-align: center;
+  background-color: white;
+  color: black;
+}
+
+.row {
+  overflow-y: hidden;
+}
+
