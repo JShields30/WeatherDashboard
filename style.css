@@ -17,7 +17,6 @@
     font-family: Arial, Helvetica, sans-serif;
   }
 
-
 .navbar{
     margin-bottom: 25px;
     width: 100vw;
@@ -33,6 +32,7 @@ ul{
 
 .searchArea{
     margin-left: auto;
+    margin-right: auto;
     align-items: center;
     text-align: center;
     
@@ -83,11 +83,29 @@ footer {
 #currentW {
   border-radius: 10px;
   text-align: center;
-  background-color: white;
+  background-color: ivory;
   color: black;
+  width: 50%;
+  align-items: center;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .row {
   overflow-y: hidden;
+  
 }
 
+.col {
+  text-align: center;
+  align-items: center;
+  margin-top: 2.5rem;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+h3 {
+  margin-left: auto;
+  margin-right: auto;
+}
